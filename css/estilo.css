@@ -1,0 +1,43 @@
+/*a leitura é feita para a esquerda para direita*/
+body {
+  background-color: chartreuse;
+  background-image: url('https://images5.alphacoders.com/425/425607.jpg');  
+  background-size: auto 100vh;/*100 do tamanho total dá tela */
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+/*ponto seleciona caasse*/
+.menu {
+    background-color: cornsilk;
+
+
+}
+.menu ul {
+    display: flex;/* forma coluna ^^*/
+    justify-content: space-between;/*dá espassamento dentre as colunas */
+}
+
+/*seleciona todas as li dentro do elemento menu
+o nome é seletor 'hieraquico'*/
+.menu li {
+    list-style: none;
+
+}
+
+a {
+    color: teal;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.site-sutitle,/*dessa forma o estilo vai para o titulo e para o subtitulo*/
+.site-title {
+    color: whitesmoke;
+    text-align: center;
+}
+.site-sutitle {
+    font-style: italic;
+}
+
+
