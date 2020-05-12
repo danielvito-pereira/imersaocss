@@ -1,20 +1,49 @@
+/*tudo em * aplica a tudo */
+*{/*soft resete do css */
+    /*essa parte foi feita para retirar o elemento a baixo*/
+    margin: 0;
+    padding: 0;/* borda interna */
+    box-sizing: border-box;/* começa a contar o tamanho do elemento dá borda interna*/
+
+}
 /*a leitura é feita para a esquerda para direita*/
 body {
   background-color: chartreuse;
-  background-image: url('https://images5.alphacoders.com/425/425607.jpg');  
+  background-image: url('../img/plano_de_fundo.jpg');  
   background-size: auto 100vh;/*100 do tamanho total dá tela */
   font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
+  font-size: 12px;
+}
+/*@algumacoisa cria uma condi como um if por exemplo, se a tela tiver pelo menos 400px vai carregar estes estilos*/
+@media (min-width/*tamanho minimo*/:400px){
+    body{
+        font-size: 14px;
+    }
+}
+/*breakpoint*/
+@media (min-width:600px){
+    body{
+        font-size: 18px;
+    }
+}
+header{
+    height: 100vh;
+    display: flex;/*ajuda ficar responsivo*/
+    justify-content: center;/*centralisa horizontalmente o conteudo*//*so funciona por conta do  flex*/
+    align-items: center;/*centaliza verticalmente, so funciona no flex*/
 }
 /*ponto seleciona caasse*/
 .menu {
     background-color: cornsilk;
-
-
+    position: fixed;/*fas com que o menu ou o elemnto fique fixo sobre tudo*/
+    width: 100vw;
+    top: 0;/* cola ele no topo do navegador que so funciona com o position declarado*/
 }
 .menu ul {
     display: flex;/* forma coluna ^^*/
-    justify-content: space-between;/*dá espassamento dentre as colunas */
+    justify-content: space-around;/*dá espassamento dentre as colunas */
+    
 }
 
 /*seleciona todas as li dentro do elemento menu
@@ -22,6 +51,11 @@ o nome é seletor 'hieraquico'*/
 .menu li {
     list-style: none;
 
+}
+.menu a{/*link do menu*/
+    
+    display: block;/*transforma em um quadrado que quebra linha*/
+    padding: 10px 20px;
 }
 
 a {
@@ -35,9 +69,18 @@ a:hover {
 .site-title {
     color: whitesmoke;
     text-align: center;
+
+}
+.site-title{
+    font-size: 4em;/*4x o tamanho do body*/
 }
 .site-sutitle {
     font-style: italic;
+}
+.img-portifolio{
+    width: 180px;/*largura */
+    height: 180px;/*altura*/
+
 }
 
 
