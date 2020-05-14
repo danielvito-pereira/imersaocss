@@ -3,9 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--ajuda a fazer um site responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--ajuda a fazer um site responsivo -->
 
     <link rel="stylesheet" href="css/estilo.css">
+    <!--link das fonts,importante semre ficar depois do link css-->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Sans+Pro&family=Teko&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/948bdee527.js" crossorigin="anonymous"></script>
 
     <title>Daniel Vitor</title>
 </head>
@@ -14,38 +20,67 @@
     <header>
         <nav class="menu">
             <ul>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Portifólio</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#portfolio">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
-        <!-- a div a baixo foi criada para agupar os dois elementos, para não ser pego pelo flex --> 
-        <div>
+        <!-- a div a baixo foi criada para agupar os dois elementos, para não ser pego pelo flex -->
+        <div class="titulos">
             <h1 class="site-title">Daniel Vitor</h1>
-            <h2 class="site-sutitle">We developer</h2>
+            <h2 class="site-sutitle">Estudante.</h2>
+            <h2 class="site-sutitle">Técnico em informática</h2>
         </div>
     </header>
-    <section>
-        <h2>Portifólio</h2>
-        <figure>
-            <img class="img-portfolio" src=".img/e" alt="eCommerce">
-            <figcaption>eCommerce</figcaption>
-        </figure>
-        <figure>
-            <img class="img-portfolio" src="./img/mobile-creditos-nate-grant-unsplash.jpg" alt=">Mobile">
-            <figcaption>Mobile</figcaption>
-        </figure>
-        <figure>
-            <img class="img-portfolio" src="./img/webdesign-creditos-domenico-loia-unsplash.jpg" alt="Web design">
-            <figcaption>Web design</figcaption>
-        </figure>
-        <figure>
-            <img class="img-portfolio" src="./img/projpessoais-creditos-hal-gatewood-unsplash.jpg"
-                alt="Projetos pessoais">
-            <figcaption>Projetos pessoais</figcaption>
-        </figure>
+
+    <section class="portfolio" id="portfolio"> <!--esse id foi ciado para indicar a dire para o menu -->
+        <h2>Projetos</h2>
+        <!--criei uma div "grid "conteiner para agrupar as imgs, para poder trabalhar melhor com elas -->
+        <div class="grid">
+            <figure>
+                <img class="img-portfolio" src="./img/laptop-with-wallet-phone-earbuds-and-tea_Sajjad Hussain M.jpg"
+                    alt="eCommerce">
+                <figcaption>eCommerce</figcaption>
+            </figure>
+            <figure>
+                <img class="img-portfolio" src="./img/Matthew Henry_coding-on-laptop.jpg" alt=">Mobile">
+                <figcaption>Mobile</figcaption>
+            </figure>
+            <figure>
+                <img class="img-portfolio" src="./img/Matthew Henry_startup-desk.jpg" alt="Web design">
+                <figcaption>Web design</figcaption>
+            </figure>
+            <figure>
+                <!--alt dá acessibilidade para deficientes visuais é muito importante -->
+                <img class="img-portfolio" src="./img/Sarah Pflug_wrtiting-tools.jpg" alt="Projetos pessoais">
+                <figcaption>Projetos pessoais</figcaption>
+            </figure>
+        </div>
     </section>
-
+    <section class="contato" id="contato">
+        <h2>Contato</h2>
+          <div class="grid icons">
+          <a target="_blank" href="https://github.com/vanessametonini">
+                <i class="fab fa-github"></i>
+          </a>
+          <a target="_blank" href="https://twitter.com/vanessametonini">
+                <i class="fab fa-twitter"></i>
+          </a>
+          <a target="_blank" href="https://linkedin.com/in/vanessametonini">
+                <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:vanessa.tonini@caelum.com.br">
+                <i class="far fa-envelope"></i>
+          </a>
+        </div>
+      </section>
+    <footer>
+        <a class="top-link hide" href="" id="js-top"><!--Botão de voltar ao topo-->
+            
+            <span class="screen-reader-text"><i class="fas fa-angle-up"></i></span>
+          </a>
+          
+        Algumas informações de copyright ou talvez alguma informação do autor de um esse rodapé vai ser top <article>?
+    </footer>
 </body>
-
 </html>
