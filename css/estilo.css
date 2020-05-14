@@ -8,10 +8,9 @@
 }
 /*a leitura é feita para a esquerda para direita*/
 body {
-  background-color: chartreuse;
   background-image: url('../img/plano_de_fundo.jpg');  
   background-size: auto 100vh;/*100 do tamanho total dá tela */
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   height: 100vh;
   font-size: 12px;
 }
@@ -23,11 +22,16 @@ body {
 }
 /*breakpoint*/
 @media (min-width:600px){
-    body{
+    body {
         font-size: 18px;
     }
 }
-header{
+@media (min-width:1200px){
+    body {
+        font-size: 20px;
+    }
+}
+header {
     height: 100vh;
     display: flex;/*ajuda ficar responsivo*/
     justify-content: center;/*centralisa horizontalmente o conteudo*//*so funciona por conta do  flex*/
@@ -35,10 +39,11 @@ header{
 }
 /*ponto seleciona caasse*/
 .menu {
-    background-color: cornsilk;
+    background-color: rgb(248, 248, 248);
     position: fixed;/*fas com que o menu ou o elemnto fique fixo sobre tudo*/
     width: 100vw;
     top: 0;/* cola ele no topo do navegador que so funciona com o position declarado*/
+    z-index: 1;/*altera a prioridade do eixo z */
 }
 .menu ul {
     display: flex;/* forma coluna ^^*/
@@ -52,18 +57,39 @@ o nome é seletor 'hieraquico'*/
     list-style: none;
 
 }
-.menu a{/*link do menu*/
+.menu a {/*link do menu*/
     
     display: block;/*transforma em um quadrado que quebra linha*/
     padding: 10px 20px;
+    transition: background-color 1s, color 1s;/*fala quais propiedades nos queremo mudar,e diz quanto tempo o vai levar a transi...*/
+}
+.menu a:active,
+.menu a:hover {
+    background-color:rgb(0, 0, 0);
+    color: whitesmoke;
 }
 
 a {
-    color: teal;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 a:hover {
     text-decoration: underline;
+}
+.titulos {/*fazendo uma animation */
+    transform: scale(0.2)/*diminui a escala*/ translate(50vh)/*translada o elemento */ ;
+    opacity: 0;
+
+    animation: linear 2s animacaoTitulo forwards/*forwards faz a animação parar no ultimo estado */;/*faz animação*/
+}
+@keyframes animacaoTitulo {/*criando a animção*/
+    0% {/*estafo inicial da animação */
+/*aceita from no lugar do 0 e to no lugar no 100*/
+    }
+    100% {/*estado final da animação*/
+        transform: scale(1)/*diminui a escala*/ translate(0)/*translada o elemento */;
+        opacity: 1;
+    }
 }
 .site-sutitle,/*dessa forma o estilo vai para o titulo e para o subtitulo*/
 .site-title {
@@ -71,16 +97,196 @@ a:hover {
     text-align: center;
 
 }
-.site-title{
+.site-title { 
     font-size: 4em;/*4x o tamanho do body*/
+    font-family: 'Teko', sans-serif;
 }
 .site-sutitle {
     font-style: italic;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5em;
 }
-.img-portifolio{
-    width: 180px;/*largura */
-    height: 180px;/*altura*/
+.contato,/*dessa forma o estilo vai para contato e para portfolio*/
+.portfolio {
+    padding: 2em;
+    min-height: 100vh;/*no minimo */
+}
+.contato h2,
+.portfolio h2 {
+    font-family: 'Press Start 2P', cursive;
+    color: whitesmoke;
+    margin-bottom: 1.5em;/*dando margim para o lado especifico*/
+    font-size: 2em;
+}
+
+.portfolio .grid /*selecionei o grid da class portfolio */{
+    display: grid;/*grade , ele mantem as linhas, sou eu que digo quantas colunas eu quero, diferente do flex box*/
+    gap: 1em;/*so existe com grid, define o espassamento entre cada coluna ou linha */
+}
+@media (min-width: 560px) {
+    .portfolio .grid {
+        grid-template-columns: 240px 240px;/*cria e formata o tamanho das colunas */
+    }
+}
+@media (min-width: 880px) {
+    .portfolio .grid {
+        grid-template-columns: repeat(3, 260);/*repeat está repetindo  */
+        justify-content: center;
+        align-content: center;
+        height: calc(100vh - 4em - 48px - 1.5em);/*calc faz o calculo */
+    }
+}
+
+.portfolio figure {
+    text-align: center;
+}
+.portfolio img-portfolio:hover img {
+    -moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
 
 }
+.img-portfolio {
+    width: 240px;/*largura */
+    height: 180px;/*altura*/
+    object-fit: cover;/*ajusta as imagens na mesma porporsão*/
+    object-position: left bottom;/*alinha as imagens */
+    /*border-radius: 58%;/*raio da borda*/
+    transition: transform 500ms;
+}
+.img-portfolio:hover{
+    transform: scale(1.2) rotate(-2deg);/*efeito dá imagem para almentar ao passar o mause */
+    /*rotate rotaciona a imagem */
+}
+@media (min-width: 1200px) {
+    .img-portfolio {
+        width: 100%;/*largura */
+        height: auto;/*altura*/
+        
+    }
+    
+}
+.contato .icons {
+    text-align: center;
+}
+.contato a {
+    color: whitesmoke;
+    font-size: 5em;
+    transition: text-shadow 1s;
+}
+.contato a:active,/*essa propriedade active é para moile */
+.contato a:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, .9);
+
+}
+footer{
+    background-color: whitesmoke;
+    justify-content: center;
+} 
+footer a {
+    color: black;
+    font-size: 2em;
+}
+.top-link {
+   transition: all .25s ease-in-out;/*ontrola a rapidez com que o botão aparecerá ou desaparecerá na tela*/
+   position: fixed;/*é o que faz o botão "grudar" no local desejado.*/
+   bottom: 0;
+   right: 0;
+   display: inline-flex;
+    
+   cursor: pointer;
+   align-items: center;
+  justify-content: center;
+  margin: 0 3em 3em 0;
+  border-radius: 50%;
+  padding: .25em;
+  width: 80px;
+  height: 80px;
+  background-color:whitesmoke;
+}
+/*
+.template  {
+    align-content: center;
+    background-color: deeppink;
+    display: grid;
+    grid-template-columns: 0.4fr 0.3fr 0.3fr;/*cria as colunas. 1fr fas ela ser flex
+    grid-template-rows: 20vh 20vh 20vh ;
+    grid-gap: 23px; espaço 
+    grid-column-start: 1;/*inicio da contagem de colunas
+    grid-column-end: 5; fim
+    grid-template-areas: "h h"
+                        "s s"
+                        "e e"
+                        "r r "
+                        "re re";  maneira de fazer um colum star/end 
+}
+.hero_image {
+    justify-content:right;
+    background-color: blue;
+    grid-column: 2/3;
+    grid-column-start: 1;inicio da contagem de colunas
+    grid-column-end: 3;fim
+}
+
+.sidebar {
+    background-color: chartreuse;
+    grid-column: 3/5;uma versão resumida de column start e colum end
+}
+.extra_content {
+    background-color: darkblue;
+    grid-column: 4/5;
+}
+.Related_meges {
+    background-color: darkgoldenrod;
+    grid-column: 5/6;
+}
+.related_posts {
+    background-color: darkred;
+    grid-column: 5/6;
+}
+footer{
+     background-color: whitesmoke;
+     justify-content: center;
+} 
+.top-link {
+    transition: all .25s ease-in-out;ontrola a rapidez com que o botão aparecerá ou desaparecerá na tela
+    position: fixed;é o que faz o botão "grudar" no local desejado.
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+     
+    cursor: pointer;
+    align-items: center;
+   justify-content: center;
+   margin: 0 3em 3em 0;
+   border-radius: 50%;
+   padding: .25em;
+   width: 80px;
+   height: 80px;
+   background-color:whitesmoke;
+}
+.show {informar ao navegador quando o botão deve (ou não) aparecer na página
+    visibility: visible;
+    opacity: 1;
+  }
+   
+ .hide {informar ao navegador quando o botão deve (ou não) aparecer na página
+    visibility: hidden;
+    opacity: 0;
+  }
+svg {Essas classes estilizarão a imagem SVG da própria seta e informarão ao navegador como exibir o botão quando um usuário passar o mouse sobre ela.
+    fill: #000;
+    width: 24px;
+    height: 12px;
+   }
+   */
+
+
+
+
+   
+
+
 
 
