@@ -8,7 +8,7 @@
 }
 /*a leitura é feita para a esquerda para direita*/
 body {
-  background-image: url('../img/plano_de_fundo.jpg');  
+  background-image: url('../img/planodefundo2_0.jpg');  
   background-size: auto 100vh;/*100 do tamanho total dá tela */
   font-family: 'Source Sans Pro', sans-serif;
   height: 100vh;
@@ -106,17 +106,55 @@ a:hover {
     font-family: 'Press Start 2P', cursive;
     line-height: 1.5em;
 }
+.sobre,
 .contato,/*dessa forma o estilo vai para contato e para portfolio*/
 .portfolio {
     padding: 2em;
     min-height: 100vh;/*no minimo */
+    
 }
+@media (min-width: 1200px) {/*se a tela tiver pelomenos 1200*/
+    .container {
+        max-width: 1200px;
+        margin-left: auto;/*centraliza apenas orizontalmente não dá para centralizar verticalmente com esse func*/
+        margin-right: auto;/*centraliza apenas orizontalmente não dá para centralizar verticalmente com esse func*/
+    }
+}
+.sobre h2,
 .contato h2,
 .portfolio h2 {
     font-family: 'Press Start 2P', cursive;
     color: whitesmoke;
     margin-bottom: 1.5em;/*dando margim para o lado especifico*/
     font-size: 2em;
+    margin-top: 1em;
+}
+.sobre p {
+    color: white;
+    margin-bottom: 1.4em;/*margem*/
+    text-indent: 1.6em;/*identação*/
+    text-align: justify;/*texto justificado*/
+}
+.sobre a {
+    color: white;
+    text-decoration: underline;
+}
+.sobre a:hover {
+    color: cyan;
+    text-decoration: none;
+
+}
+.sobre .avatar {
+    float: right;
+    margin-left: 2em;   
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);/*traalha com as coordenadas, pra alterar a forma da imagem */
+}
+@media (min-width: 600px){
+    .sobre .avatar { 
+        float: right;
+        clip-path: circle(50% at 50% 50%)
+    }
+    
 }
 
 .portfolio .grid /*selecionei o grid da class portfolio */{
@@ -147,17 +185,45 @@ a:hover {
 
 }
 .img-portfolio {
-    width: 240px;/*largura */
+    width: 100%;/*largura */
     height: 180px;/*altura*/
     object-fit: cover;/*ajusta as imagens na mesma porporsão*/
     object-position: left bottom;/*alinha as imagens */
     /*border-radius: 58%;/*raio da borda*/
     transition: transform 500ms;
 }
-.img-portfolio:hover{
+/*.img-portfolio:hover{
     transform: scale(1.2) rotate(-2deg);/*efeito dá imagem para almentar ao passar o mause */
-    /*rotate rotaciona a imagem */
+    /*rotate rotaciona a imagem 
+}*/
+.flip-card {
+   perspective: 500px; 
 }
+.card {
+    position: relative;
+    transform-style: preserve-3d;/*faz o efeito de esconder e mostrar */
+    transition: transform 1s;
+}
+
+.flip-card:hover .card {/* quando der hover na flip a div card vai rodar */
+    transform: rotateY(180deg);/*rotaciona o eixo y da  imagen */
+}
+
+.card-back,
+.card-front  {
+    backface-visibility: hidden;/*esconde a parte de tras dá frente. esconde a face de trás */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-back {
+  
+    height: 180px;
+    width: 100%;
+    transform: rotateY(180deg);/*rotaciona o eixo y da  imagen */
+}
+
 @media (min-width: 1200px) {
     .img-portfolio {
         width: 100%;/*largura */
@@ -188,6 +254,34 @@ footer a {
     color: black;
     font-size: 2em;
 }
+.sgvd {
+    width: 300px;
+    margin: 100px right;
+    
+}
+
+/*sgvd foi criado para animar meu nome no footer*/
+.sgvd svg  {/*linha da anima..*/
+    stroke-width: 2px;/*linha*/
+    stroke: rgb(0, 0, 0);/*cor da linha */
+    width: 100%;
+    height: 100%;
+    stroke-dashoffset: 1000;/*é a distancia de inicio do ponto da animação */
+    stroke-dasharray: 1000;/*é o tamanho dos trasssos*/
+    animation: sgvd 5s ease-in-out forwards infinite; 
+}
+@keyframes sgvd {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
 .top-link {
    transition: all .25s ease-in-out;/*ontrola a rapidez com que o botão aparecerá ou desaparecerá na tela*/
    position: fixed;/*é o que faz o botão "grudar" no local desejado.*/
@@ -204,6 +298,41 @@ footer a {
   width: 80px;
   height: 80px;
   background-color:whitesmoke;
+}
+
+.grid_rodape {
+    display: grid;/*grade , ele mantem as linhas, sou eu que digo quantas colunas eu quero, diferente do flex box*/
+    gap: 1em;/*so existe com grid, define o espassamento entre cada coluna ou linha */ 
+    column-gap: 800px/*// Define a distância entre as colunas.*/
+}
+@media (min-width: 560px) {
+    .grid_rodape {
+        grid-template-columns: 240px 240px;/*cria e formata o tamanho das colunas */
+    }
+}
+@media (min-width: 880px) {
+    .grid_rodape {
+        grid-template-columns: repeat(3, 260);/*repeat está repetindo  */
+        justify-content: center;
+        align-content: center;
+        height: calc(100vh - 4em - 780px - 1.5em);/*calc faz o calculo */
+        
+    }
+}
+.grid_rodape a {
+    color: rgb(0, 0, 0);
+    font-size: 2em;
+    transition: text-shadow 1s;
+}
+.grid_rodape a:active,/*essa propriedade active é para moile */
+.grid_rodape a:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgb(10, 10, 10);
+
+}
+
+.grid_rodape .grid_icons {
+       margin-left: 22px;
 }
 /*
 .template  {
@@ -281,8 +410,6 @@ svg {Essas classes estilizarão a imagem SVG da própria seta e informarão ao n
     height: 12px;
    }
    */
-
-
 
 
    
