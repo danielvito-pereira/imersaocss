@@ -1,0 +1,29 @@
+.sobre p {
+    color: white;
+    margin-bottom: 1.4em;/*margem*/
+    text-indent: 1.6em;/*identação*/
+    text-align: justify;/*texto justificado*/
+}
+.sobre a {
+    color: white;
+    text-decoration: underline;
+}
+.sobre a:hover {
+    color: cyan;
+    text-decoration: none;
+
+}
+.sobre .avatar {
+    float: right;
+    margin-left: 2em;  
+    clip-path: circle(50% at 50% 50%);/*traalha com as coordenadas, pra alterar a forma da imagem */
+  
+}
+
+@media (max-width: 1024px){
+    .sobre .avatar { 
+        margin-left: 2em;
+        float: right;
+        clip-path: none;   
+    }
+}

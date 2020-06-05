@@ -1,0 +1,17 @@
+
+
+.contato .icons {
+    text-align: center;
+    margin-top: 299px;
+}
+.contato a {
+    color: whitesmoke;
+    font-size: 5em;
+    transition: text-shadow 1s;
+}
+.contato a:active,/*essa propriedade active é para moile */
+.contato a:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, .9);
+
+}
