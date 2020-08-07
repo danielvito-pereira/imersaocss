@@ -11,7 +11,7 @@ html {
 }
 /*a leitura é feita para a esquerda para direita*/
 body {
-  background-image: url('/img/background-992850.png');  
+  background-image: url('/img/planodefundo2_0.jpg');  
   background-size: auto 100vh;/*100 do tamanho total dá tela */
   font-family: 'Source Sans Pro', sans-serif;
   height: 100vh;
@@ -308,33 +308,33 @@ footer a {
     border-radius: 50vh;
 }
 
-/*
+
 .template  {
     align-content: center;
     background-color: deeppink;
     display: grid;
-    grid-template-columns: 0.4fr 0.3fr 0.3fr;/*cria as colunas. 1fr fas ela ser flex
+    grid-template-columns: 0.4fr 0.3fr 0.3fr;/*cria as colunas. 1fr fas ela ser flex*/
     grid-template-rows: 20vh 20vh 20vh ;
-    grid-gap: 23px; espaço 
-    grid-column-start: 1;/*inicio da contagem de colunas
-    grid-column-end: 5; fim
+    grid-gap: 23px; /*espaço */
+    grid-column-start: 1;/*inicio da contagem de colunas*/
+    grid-column-end: 5; /*fim*/
     grid-template-areas: "h h"
                         "s s"
                         "e e"
                         "r r "
-                        "re re";  maneira de fazer um colum star/end 
+                        "re re";/*  maneira de fazer um colum star/end */
 }
 .hero_image {
     justify-content:right;
     background-color: blue;
     grid-column: 2/3;
-    grid-column-start: 1;inicio da contagem de colunas
-    grid-column-end: 3;fim
+    grid-column-start: 1;/*inicio da contagem de colunas*/
+    grid-column-end: 3;/*fim*/
 }
 
 .sidebar {
     background-color: chartreuse;
-    grid-column: 3/5;uma versão resumida de column start e colum end
+    grid-column: 3/5;/*uma versão resumida de column start e colum end*/
 }
 .extra_content {
     background-color: darkblue;
@@ -353,8 +353,8 @@ footer{
      justify-content: center;
 } 
 .top-link {
-    transition: all .25s ease-in-out;ontrola a rapidez com que o botão aparecerá ou desaparecerá na tela
-    position: fixed;é o que faz o botão "grudar" no local desejado.
+    transition: all .25s ease-in-out;/*ontrola a rapidez com que o botão aparecerá ou desaparecerá na tela*/
+    position: fixed;/*é o que faz o botão "grudar" no local desejado.*/
     bottom: 0;
     right: 0;
     display: inline-flex;
@@ -369,21 +369,21 @@ footer{
    height: 80px;
    background-color:whitesmoke;
 }
-.show {informar ao navegador quando o botão deve (ou não) aparecer na página
+.show {/*informar ao navegador quando o botão deve (ou não) aparecer na página*/
     visibility: visible;
     opacity: 1;
   }
    
- .hide {informar ao navegador quando o botão deve (ou não) aparecer na página
+ .hide {/*informar ao navegador quando o botão deve (ou não) aparecer na página*/
     visibility: hidden;
     opacity: 0;
   }
-svg {Essas classes estilizarão a imagem SVG da própria seta e informarão ao navegador como exibir o botão quando um usuário passar o mouse sobre ela.
+svg {/*Essas classes estilizarão a imagem SVG da própria seta e informarão ao navegador como exibir o botão quando um usuário passar o mouse sobre ela.*/
     fill: #000;
     width: 24px;
     height: 12px;
    }
-   */
+  
 
 .video-topo {
     /*Ajuste a largura e altura desejadas aqui*/

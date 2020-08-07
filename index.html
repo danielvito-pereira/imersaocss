@@ -7,9 +7,9 @@
     <!--ajuda a fazer um site responsivo -->
 
     <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="css/sobre.css">
-    <link rel="stylesheet" href="css/portfolio.css">
-    <link rel="stylesheet" href="css/contato.css">
+    <link rel="stylesheet" href="css/sobreContatoP.css">
+    <link rel="stylesheet" href="./slide-stories-master/style.css">
+
     <!--link das fonts,importante semre ficar depois do link css-->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Sans+Pro&family=Teko&display=swap"
         rel="stylesheet">
@@ -21,9 +21,9 @@
 </head>
 
 <body>
-   
+
     <header>
-        
+
         <nav class="menu">
             <ul class="container">
                 <li><a href="#sobre">Sobre</a></li>
@@ -35,16 +35,16 @@
         <div class="titulos">
             <h1 class="site-title">Daniel Vitor</h1>
             <h2 class="site-sutitle2">Técnico em informática.</h2>
-            
+
         </div>
-        <div class="video-topo">
-            <video src="/videos/Hello-World.mp4"  autoplay="autoplay" loop></video>
+        <!-- <div class="video-topo">
+            <video src="/videos/Hello-World.mp4"  autoplay="autoplay" loop></video>-->
         </div>
     </header>
     <section class="sobre container" id="sobre">
         <h2>Sobre</h2>
         <figure class="avatar">
-            <img src="/img/IMG-daniesitemoba-WA0036.jpg"
+            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQF09RR4fgyX5g/profile-displayphoto-shrink_200_200/0?e=1597276800&v=beta&t=M00190NU3OVLBcTbP7-x_9Wo9Ys_1A-It8jc3L9ukVs"
                 alt="Damiel Vitor">
         </figure>
         <div class="texto">
@@ -103,14 +103,35 @@
         <!--esse id foi ciado para indicar a dire para o menu -->
         <h2>Projetos</h2>
         <!--criei uma div "grid "conteiner para agrupar as imgs, para poder trabalhar melhor com elas -->
+
+     <!--
+
+        <div data-slide="slide" class="slide">
+            <div class="slide-items">
+              <img src="./img/IMG-20190625-WA0009.jpg" alt="Img 1">
+              <img src="./img/IMG-20190625-WA0036.jpg" alt="Img 2">
+              <img src="./img/daniel_flix.jpg" alt="Img 3">
+              <img src="./img/site_pessoal.jpg" alt="Img 4">
+            </div>
+            <nav class="slide-nav">
+              <div class="slide-thumb"></div>
+              <button class="slide-prev">Anterior</button>
+              <button class="slide-next">Próximo</button>
+            </nav>
+          </div>
+          
+          
+          -->
+          
+     
         <div class="grid">
-            <!--as divs flip-card , card, car-frente e card-back foram criadas para fazer a animation da -->
+                  <!-- as divs flip-card , card, car-frente e card-back foram criadas para fazer a animation da -->
             <div class="flip-card">
                 <div class="card">
                     <figure class="card-frente">
                         <img class="img-portfolio"
-                            src="./img/laptop-with-wallet-phone-earbuds-and-tea_Sajjad Hussain M.jpg" alt="eCommerce">
-                        <figcaption>Commerce</figcaption>
+                            src="./img/site_pessoal.jpg" alt="eCommerce">
+                        <figcaption>Site Pessoal</figcaption>
                         <div class="card-back">
                             <img src="" alt="">
                             oi eu sou a parte de trás é não tenho imagens
@@ -135,8 +156,8 @@
                 <div class="card">
                     <figure class="card-frente">
 
-                        <img class="img-portfolio" src="./img/Matthew Henry_coding-on-laptop.jpg" alt=">Mobile">
-                        <figcaption>Mobile</figcaption>
+                        <img class="img-portfolio" src="./img/daniel_flix.jpg" alt=">Mobile">
+                        <figcaption>Daniel Flix</figcaption>
                         <div class="card-back">
                             <img src="" alt="">
                             oi eu sou a parte de trás
@@ -158,8 +179,8 @@
                     </figure>
                 </div>
             </div>
+            </div>
 
-        </div>
     </section>
     <section class="contato container" id="contato">
         <h2>Contato</h2>
@@ -213,29 +234,29 @@
         </div>
     </footer>
     <button onclick="backToTop()" id="topo"> <span class="screen-reader-text"><i class="fas fa-angle-up"></i>
-            </a></button>
+    </a></button>
 
-         <script>
+            <script>
 
 
 
-window.onscroll = function() {/*é chamada assim que a pagina for rolada */
-    scroll();
-}
-function scroll() {/* mostra o botão assim que decer a pagina */
-    let btn = document.getElementById("topo");/*pega o botão*/
-    if (document.documentElement.scrollTop > 50) {/* unidade de medida, que mede o quanto de scroll foi dado a partir do topo */
-        btn.style.display = "block";/*passa o botão de none para block */
-    } else {
-        btn.style.display = "none";
-    }
-}
-function backToTop() {/*faz o otão voltar ao topo que vai ser chamada dentro da função onclick do botão  */
-    document.documentElement.scrollTop = 0;
-}
-
-         </script>   
-    
+                window.onscroll = function() {/*é chamada assim que a pagina for rolada */
+                    scroll();
+                }
+                function scroll() {/* mostra o botão assim que decer a pagina */
+                    let btn = document.getElementById("topo");/*pega o botão*/
+                    if (document.documentElement.scrollTop > 50) {/* unidade de medida, que mede o quanto de scroll foi dado a partir do topo */
+                        btn.style.display = "block";/*passa o botão de none para block */
+                    } else {
+                        btn.style.display = "none";
+                    }
+                }
+                function backToTop() {/*faz o otão voltar ao topo que vai ser chamada dentro da função onclick do botão  */
+                    document.documentElement.scrollTop = 0;
+                }
+                
+                         </script> 
+    <script src="./slide-stories-master/slide-stories.js"></script>
 </body>
 
 </html>

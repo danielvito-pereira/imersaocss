@@ -1,5 +1,5 @@
 
-window.onscroll = function() {/*é chamada assim que a pagina for rolada */
+window.onscroll = function () {/*é chamada assim que a pagina for rolada */
     scroll();
 }
 function scroll() {/* mostra o botão assim que decer a pagina */
@@ -10,6 +10,6 @@ function scroll() {/* mostra o botão assim que decer a pagina */
         btn.style.display = "none";
     }
 }
-function backToTop() {/*faz o otão voltar ao topo que vai ser chamada dentro da função onclick do botão  */
+function backToTop() {/*faz o botão voltar ao topo que vai ser chamada dentro da função onclick do botão  */
     document.documentElement.scrollTop = 0;
 }

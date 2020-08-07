@@ -1,0 +1,121 @@
+.sobre p {
+    color: white;
+    margin-bottom: 1.4em;/*margem*/
+    text-indent: 1.6em;/*identação*/
+    text-align: justify;/*texto justificado*/
+}
+.sobre a {
+    color: white;
+    text-decoration: underline;
+}
+.sobre a:hover {
+    color: cyan;
+    text-decoration: none;
+
+}
+.sobre .avatar {
+    float: right;
+    margin-left: 2em;  
+    clip-path: circle(50% at 50% 50%);/*traalha com as coordenadas, pra alterar a forma da imagem */
+  
+}
+
+@media (max-width: 1024px){
+    .sobre .avatar { 
+        margin-left: 2em;
+        float: right;
+        clip-path: none;   
+    }
+}
+
+
+.contato .icons {
+    text-align: center;
+    margin-top: 299px;
+}
+.contato a {
+    color: whitesmoke;
+    font-size: 5em;
+    transition: text-shadow 1s;
+}
+.contato a:active,/*essa propriedade active é para moile */
+.contato a:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, .9);
+
+}
+
+.portfolio .grid /*selecionei o grid da class portfolio */{
+    display: grid;/*grade , ele mantem as linhas, sou eu que digo quantas colunas eu quero, diferente do flex box*/
+    gap: 3em;/*so existe com grid, define o espassamento entre cada coluna ou linha */
+}
+@media (min-width: 560px) {
+    .portfolio .grid {
+        grid-template-columns: 240px 240px;/*cria e formata o tamanho das colunas */
+    }
+}
+@media (min-width: 880px) {
+    .portfolio .grid {
+        grid-template-columns: repeat(3, 260);/*repeat está repetindo  */
+        justify-content: center;
+        align-content: center;
+        height: calc(100vh - 2em - 38px - 1.5em);/*calc faz o calculo */
+    }
+}
+
+.portfolio figure {
+    text-align: center;
+}
+.portfolio img-portfolio:hover img {
+    -moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+
+}
+.img-portfolio {
+    width: 100%;/*largura */
+    height: 180px;/*altura*/
+    object-fit: cover;/*ajusta as imagens na mesma porporsão*/
+    object-position: left bottom;/*alinha as imagens */
+    /*border-radius: 58%;/*raio da borda*/
+    transition: transform 500ms;
+}
+/*.img-portfolio:hover{
+    transform: scale(1.2) rotate(-2deg);/*efeito dá imagem para almentar ao passar o mause */
+    /*rotate rotaciona a imagem 
+}*/
+.flip-card {
+    perspective: 500px; 
+ }
+ .card {
+     position: relative;
+     transform-style: preserve-3d;/*faz o efeito de esconder e mostrar */
+     transition: transform 1s;
+ }
+ 
+ .flip-card:hover .card {/* quando der hover na flip a div card vai rodar */
+     transform: rotateY(180deg);/*rotaciona o eixo y da  imagen */
+ }
+ 
+ .card-back,
+ .card-front  {
+     backface-visibility: hidden;/*esconde a parte de tras dá frente. esconde a face de trás */
+     position: absolute;
+     top: 0;
+     left: 0;
+ }
+ 
+ .card-back {
+     
+     height: 180px;
+     width: 100%;
+     transform: rotateY(180deg);/*rotaciona o eixo y da  imagen */
+ }
+ @media (min-width: 1200px) {
+    .img-portfolio {
+        width: 100%;/*largura */
+        height: auto;/*altura*/
+        
+    }
+    
+}
